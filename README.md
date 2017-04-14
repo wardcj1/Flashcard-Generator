@@ -24,7 +24,7 @@ Basic flashcards, which have a front ("Who was the first president of the United
 ## Examples:
 
 #### Constructors work as follows.
-`
+```javascript
 var firstPresident = new BasicCard(
     "Who was the first president of the United States?", "George Washington");
 
@@ -47,4 +47,5 @@ console.log(firstPresidentCloze.partial); "
 console.log(firstPresidentCloze.fullText): "
 
 // Should throw or log an error because "oops" doesn't appear in "This doesn't work"
-var brokenCloze("This doesn't work", "oops"); `
+var brokenCloze("This doesn't work", "oops");
+```
