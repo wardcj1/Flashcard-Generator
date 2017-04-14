@@ -14,7 +14,7 @@ Basic flashcards, which have a front ("Who was the first president of the United
 ...We can create a "cloze deletion" by removing the words "George Washington":
 "... was the first president of the United States."
 
-*Emphasized text* This is useful for building flash card applications that forces users to remember the important part of a sentence, and is a common device in educational applications.
+*This is useful for building flash card applications that forces users to remember the important part of a sentence, and is a common device in educational applications.*
 
 ## A flash card built this way has three parts:
 1. The full text. This is the entire sentence users need to remember: "George Washington was the first president of the United States."
@@ -24,7 +24,7 @@ Basic flashcards, which have a front ("Who was the first president of the United
 ## Examples:
 
 #### Constructors work as follows.
-`code()`
+`
 var firstPresident = new BasicCard(
     "Who was the first president of the United States?", "George Washington");
 
@@ -47,4 +47,4 @@ console.log(firstPresidentCloze.partial); "
 console.log(firstPresidentCloze.fullText): "
 
 // Should throw or log an error because "oops" doesn't appear in "This doesn't work"
-var brokenCloze("This doesn't work", "oops"); 
+var brokenCloze("This doesn't work", "oops"); `
