@@ -11,28 +11,40 @@ function BasicCard(front, back) {
   this.back = back;
 }
 
+var questionArray = [];
 var firstPresident = new BasicCard("Who was the first president of the United States?", "George Washington");
-// var q2 = new BasicCard();
-// var q3 = new BasicCard();
-// var q4 = new BasicCard();
-// var q5 = new BasicCard();
+questionArray.push(firstPresident);
+var q2 = new BasicCard("When is this", "Now");
+questionArray.push(q2);
+// var q3 = new BasicCard("", "");
+questionArray.push(q2);
+// var q4 =  new BasicCard("", "");
+questionArray.push(q2);
+// var q5 =  new BasicCard("", "");
+questionArray.push(q2);
+
+var currentQuestion = 0;
 
 	function askQuestion() {
 	inquirer.prompt([
 		{
 			type: 'input',
-			message: firstPresident.front + '\nAnswer: ',
+			message: questionArray[currentQuestion].front + '\nAnswer: ',
 			name: 'userGuess'
 		}
 	]).then(function (answers) {
 		console.log('\n');
 
-		if (answers.userGuess === firstPresident.back) {
+		if (answers.userGuess === questionArray[currentQuestion].back) {
 			console.log('Correct!');
-			console.log(firstPresident.back); 
+			console.log(questionArray[currentQuestion].back); 
+			currentQuestion++;
+			askQuestion();
 		} else {
 			console.log('Wrong.');
-			console.log(firstPresident.back); 
+			console.log(questionArray[currentQuestion].back); 
+			currentQuestion++;
+			askQuestion();
 		}
 	})
 };	
